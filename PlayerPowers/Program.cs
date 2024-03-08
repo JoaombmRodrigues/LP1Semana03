@@ -6,7 +6,11 @@ namespace PlayerPowers
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            //ask player number
+            Console.Write("Qual o número de jogadores? ");
+            string tempstr = Console.ReadLine();
+            int n = int.Parse(tempstr);
+            
         }
     }
 }
