@@ -12,7 +12,20 @@ namespace ChangeString
             //ask for a character
             Console.WriteLine("Write a character: ");
             string s2 = Console.ReadLine();
+            //convert string to char
             char c = char.Parse(s2);
+
+            foreach(char c2 in s)
+                //change char to 'X'
+                if(c2 == c)
+                {
+                    Console.Write("X");
+                }
+                else
+                {
+                    Console.Write(c2);
+                }
+            
         }
     }
 }
