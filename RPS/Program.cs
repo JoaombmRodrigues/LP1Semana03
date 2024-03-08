@@ -23,23 +23,27 @@ namespace RPS
 
         private static int RockPaperScissors(string player1, string player2)
         {
-            int res;
-            if (player1 == player2)
+            GameItem p1 = (GameItem)Enum.Parse(typeof(GameItem), player1);
+            GameItem p2 = (GameItem)Enum.Parse(typeof(GameItem), player2);
+
+            GameStatus res;
+
+            if (p1 == p2)
             {
                 res = 0; // Draw
             }
-            else if (((player1 == "Rock") && (player2 == "Scissors")) ||
-                ((player1 == "Scissors") && (player2 == "Paper")) ||
-                ((player1 == "Paper") && (player2 == "Rock")))
+            else if (((p1 == GameItem.Rock) && (p2 == GameItem.Scissors)) ||
+                ((p1 == GameItem.Scissors) && (p2 == GameItem.Paper)) ||
+                ((p1 == GameItem.Paper) && (p2 == GameItem.Rock)))
             {
-                res = 1; // Player 1 wins
+                res = GameStatus.Player1Wins; // Player 1 wins
             }
             else
             {
-                res = 2; // Player 2 wins
+                res = GameStatus.Player2Wins; // Player 2 wins
             }
 
-            return res;
+            return (int)res;
         }
     }
 }
